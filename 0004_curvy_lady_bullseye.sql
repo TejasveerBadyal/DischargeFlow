@@ -1,0 +1,2 @@
+CREATE UNIQUE INDEX `appointment_confirmed_slot` ON `appointment_requests` (lower("clinician"),`confirmed_at`) WHERE "appointment_requests"."status" = 'confirmed';--> statement-breakpoint
+CREATE UNIQUE INDEX `appointment_open_request` ON `appointment_requests` (`case_id`,`department`,`preferred_at`) WHERE "appointment_requests"."status" IN ('requested','confirmed');
